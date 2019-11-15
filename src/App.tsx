@@ -6,14 +6,13 @@ import SubPage from './pages/subPageExample/SubPage';
 import PrivateRoute from './navigation/PrivateRoutes/PrivateRoute';
 
 const App: React.FC = () => {
-  localStorage.setItem('token','aaa');
   return (
     <Router>
       <div>
         <Link to="/">Home</Link>
         <Link to="/sub">Sub</Link>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <PrivateRoute exact path="/" component={HomePage} />
         {/* <Route exact path="/sub" component={SubPage} /> */}
         <PrivateRoute exact path="/sub" component={SubPage} />
       </Switch>
