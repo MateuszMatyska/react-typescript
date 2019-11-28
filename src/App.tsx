@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
-import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
+import LoginPage from './pages/LoginPage/LoginPage';
 import SubPage from './pages/subPageExample/SubPage';
 import PrivateRoute from './navigation/PrivateRoutes/PrivateRoute';
+import { Auth } from './navigation/Auth';
 
 const App: React.FC = () => {
+
+  useEffect(() => {
+    Auth();
+  }, []);
+
   return (
     <Router>
       <div>
@@ -13,7 +20,7 @@ const App: React.FC = () => {
         <Link to="/sub">Sub</Link>
       <Switch>
         <PrivateRoute exact path="/" component={HomePage} />
-        {/* <Route exact path="/sub" component={SubPage} /> */}
+        <PrivateRoute exact path="/login" component={LoginPage} redirectPath="/"/> 
         <PrivateRoute exact path="/sub" component={SubPage} />
       </Switch>
       </div>
