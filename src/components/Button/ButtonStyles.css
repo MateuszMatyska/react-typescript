@@ -1,0 +1,12 @@
+.btn {
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: 0.1rem solid #000000;
+    border-radius: 1rem;
+    outline: none;
+}
+
+.btn:active{
+    border: 0.1rem solid #ffffff;
+    color: #ffffff;
+}

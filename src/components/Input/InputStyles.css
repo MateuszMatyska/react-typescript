@@ -1,0 +1,18 @@
+.insert-text {
+    padding: 1rem;
+    color: #000000;
+    font-size: 1.2rem;
+    border: 0.1rem solid #059FFF;
+    border-radius: 1rem;
+}
+
+.insert-text:focus {
+    border: 0.1rem solid #FF9705;
+    color: #FF9705;
+    outline: none;
+}
+
+.validation-failed {
+    border: 0.1rem solid #FF1F35 !important;
+    color: #FF1F35 !important;
+}

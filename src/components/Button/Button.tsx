@@ -1,6 +1,6 @@
 import React from 'react';
-import { IButtonProps } from './IButtonProps'
-
+import { IButtonProps } from './IButtonProps';
+import './ButtonStyles.css';
 
 const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
     const onClick = () => {
@@ -9,7 +9,13 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
         }
     }
 
-    return <input type="button" value={props.text} onClick={onClick} disabled={props.disable ? true: false} />
+    return <input 
+                type="button" 
+                value={props.text} 
+                onClick={onClick} 
+                disabled={props.disable ? true: false}
+                className="btn"
+            />
 }
 
 export default Button;
