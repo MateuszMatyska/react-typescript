@@ -3,4 +3,5 @@ export interface IButtonProps{
     onClick?: () => void;
     text: string;
     disable?: boolean;
+    variant?: string;
 }

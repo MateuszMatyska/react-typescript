@@ -3,4 +3,5 @@ export interface IInputProps {
     onChange: any;
     value: any;
     validationFailed?: boolean;
+    placeholder?: string;
 }

@@ -4,9 +4,59 @@
     border: 0.1rem solid #000000;
     border-radius: 1rem;
     outline: none;
+    background-color: #D3D3D3;
 }
 
 .btn:active{
-    border: 0.1rem solid #ffffff;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #D3D3D3;
+    border: 0.1rem solid #D3D3D3;
+}
+
+.primary {
+     background-color: #059FFF !important;
+     color: #ffffff !important;
+     border: 0.1rem solid #ffffff !important;
+}
+
+.primary:active {
+    background-color: #FFFFFF !important;
+    color: #059FFF !important;
+    border: 0.1rem solid #059FFF !important;
+}
+
+.success {
+    background-color: #37BD00 !important;
+    color: #ffffff !important;
+    border: 0.1rem solid #ffffff !important;
+}
+
+.success:active {
+    background-color: #ffffff !important;
+    color: #37BD00 !important;
+    border: 0.1rem solid #37BD00 !important;
+}
+
+.danger {
+    background-color: #FF1318 !important;
+    color: #ffffff !important;
+    border: 0.1rem solid #ffffff !important;
+}
+
+.danger:active {
+    background-color: #ffffff !important;
+    color: #FF1318 !important;
+    border: 0.1rem solid #FF1318 !important;
+}
+
+.warning {
+    background-color: #FF9708 !important;
+    color: #000000 !important;
+    border: 0.1rem solid #000000 !important;
+}
+
+.warning:active {
+    background-color: #ffffff !important;
+    color: #FF9708 !important;
+    border: 0.1rem solid #FF9708 !important;
 }

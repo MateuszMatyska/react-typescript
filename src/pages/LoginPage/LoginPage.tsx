@@ -28,13 +28,13 @@ const LoginPage: React.FC = () => {
             </div>
             <div className="inputs-wrapper">
                 <div className="input-section">
-                    <Input type="text" value={login} onChange={onChangeLogin} />
+                    <Input type="text" value={login} onChange={onChangeLogin} placeholder="Login" />
                 </div>
                 <div className="input-section">
-                    <Input type="password" value={password} onChange={onChangePassword} />
+                    <Input type="password" value={password} onChange={onChangePassword} placeholder="Password" />
                 </div>
                 <div className="input-section">
-                    <Button text="Login" onClick={clickIn} />
+                    <Button text="Login" onClick={clickIn} variant="primary" />
                 </div>
             </div>
         </div>

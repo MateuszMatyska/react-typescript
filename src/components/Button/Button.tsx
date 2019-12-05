@@ -9,12 +9,30 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
         }
     }
 
+    const getVariant = (): string => {
+        const variant = props.variant;
+
+        switch(variant){
+            case "primary":
+                return "btn primary";
+            case "success":
+                return "btn success";
+            case "danger":
+                return "btn danger";
+            case "warning":
+                return "btn warning";
+            default: 
+                return "btn";
+        }
+    }
+
+    const { text, disable } = props;
     return <input 
                 type="button" 
-                value={props.text} 
+                value={text} 
                 onClick={onClick} 
-                disabled={props.disable ? true: false}
-                className="btn"
+                disabled={disable ? true: false}
+                className={getVariant()}
             />
 }
 

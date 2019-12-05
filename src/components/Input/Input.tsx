@@ -8,6 +8,7 @@ const Input: React.FC<IInputProps> = (props: IInputProps) => {
                 value={props.value} 
                 onChange={props.onChange} 
                 className={props.validationFailed ? "insert-text validation-failed" : "insert-text"}
+                placeholder={props.placeholder}
             />
 }
 
