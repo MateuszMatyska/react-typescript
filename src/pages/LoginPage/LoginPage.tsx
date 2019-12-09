@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Button from "../../components/Button/Button";
-import Input from "../../components/Input/Input";
+import Button from "components/Button/Button";
+import Input from 'components/Input/Input';
 import "./LoginPageStyles.css";
 
 const LoginPage: React.FC = () => {

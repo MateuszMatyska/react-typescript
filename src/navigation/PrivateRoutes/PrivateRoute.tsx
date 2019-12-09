@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { IPrivateRoute } from './Interfaces/IPrivateRoute';
-import { UserMiddleware } from '../Middlewares/User/UserMiddleware';
+import { UserMiddleware } from 'navigation/Middlewares/User/UserMiddleware';
 
 const PrivateRoute: React.FC<IPrivateRoute> = (props: IPrivateRoute) => {
     const { component: Component, redirectPath, ...rest } = props;
