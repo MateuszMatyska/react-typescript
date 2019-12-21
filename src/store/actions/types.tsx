@@ -1,4 +1,4 @@
-import {IUser} from 'store/reducers/UserReducer'
+import { IUser } from 'store/reducers/UserReducer'
 
 export enum UserTypes {
     ADD_USER = "ADD_USER",
