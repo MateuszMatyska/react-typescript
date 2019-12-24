@@ -8,11 +8,11 @@ export const getUser: ActionCreator<ThunkAction<
     IUser,
     null,
     IAddUser
->> = () => {
+>> = (name: string) => {
     return async (dispatch: Dispatch) => {
         dispatch({
             type: UserTypes.ADD_USER,
-            payload: "Mateo"
+            payload: name
         });
     };
 };
