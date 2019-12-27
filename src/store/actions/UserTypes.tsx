@@ -3,9 +3,14 @@ export enum UserTypes {
     DELETE_USER = "DELETE_USER"
 };
 
+export interface IUser {
+    FirstName: string;
+    LastName: string;
+}
+
 export interface IAddUser {
     type: UserTypes.ADD_USER,
-    payload: string
+    payload: IUser
 }
 
 export type UserActions = IAddUser;

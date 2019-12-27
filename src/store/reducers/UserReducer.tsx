@@ -1,13 +1,10 @@
 import {Reducer} from 'redux'
 
-import { UserTypes, UserActions } from 'store/actions/types';
-
-export interface IUser {
-    name: string
-}
+import { UserTypes, UserActions, IUser } from 'store/actions/UserTypes';
 
 const initState: IUser = {
-    name: ""
+    FirstName: "",
+    LastName: ""
 }
 
 export const UserReducer: Reducer<IUser, UserActions> = (state = initState, action) => { 
@@ -15,7 +12,8 @@ export const UserReducer: Reducer<IUser, UserActions> = (state = initState, acti
         case UserTypes.ADD_USER: {
             return {
                 ...state,
-                name: action.payload
+                FirstName: action.payload.FirstName, 
+                LastName: action.payload.LastName
             }
         }
         default: {

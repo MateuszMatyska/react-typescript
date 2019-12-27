@@ -3,13 +3,14 @@ import Button from "components/Button/Button";
 import Input from 'components/Input/Input';
 import "./LoginPageStyles.css";
 
-const LoginPage: React.FC = () => {
+const LoginPage: React.FC<any> = (props: any) => {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
 
     const clickIn = () => {
         if (login !== "" && password !== "") {
             localStorage.setItem("token", `${login}`);
+            props.history.push("/");
         }
     };
 

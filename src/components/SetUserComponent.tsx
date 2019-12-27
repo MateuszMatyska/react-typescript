@@ -15,7 +15,7 @@ const SetUserComponent: React.FC<any> = (props: any) => {
     };
 
     const setUserNameAction = () => {
-        props.setUser(userName);
+        props.setUser(userName,"Admin");
     }
 
     return <div>
@@ -26,7 +26,7 @@ const SetUserComponent: React.FC<any> = (props: any) => {
 
 const mapDispatchToProps = (dispatch: any) => {
     return {
-        setUser: (name: string) => {dispatch(getUser(name))}
+        setUser: (FirstName: string, LastName: string) => {dispatch(getUser(FirstName,LastName))}
     }
 }
 

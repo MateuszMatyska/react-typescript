@@ -1,18 +1,18 @@
 import { ActionCreator, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
-import { IUser } from "store/reducers/UserReducer";
-import { IAddUser, UserTypes } from "store/actions/types";
+import { IAddUser, UserTypes, IUser } from "store/actions/UserTypes";
 
 export const getUser: ActionCreator<ThunkAction<
     Promise<any>,
     IUser,
     null,
     IAddUser
->> = (name: string) => {
+>> = (FirstName: string, LastName: string) => {
     return async (dispatch: Dispatch) => {
+        const user = {FirstName: FirstName, LastName: LastName} as IUser;
         dispatch({
             type: UserTypes.ADD_USER,
-            payload: name
+            payload: user
         });
     };
 };
