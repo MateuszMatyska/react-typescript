@@ -1,19 +1,30 @@
 import {Reducer} from 'redux'
 
-import { UserTypes, UserActions, IUser } from 'store/actions/UserTypes';
+import { UserTypes, UserActions, IUserTypes } from 'store/actions/UserTypes';
 
-const initState: IUser = {
-    FirstName: "",
-    LastName: ""
+const initState: IUserTypes = {
+    User: undefined,
+    LoginUser: undefined 
 }
 
-export const UserReducer: Reducer<IUser, UserActions> = (state = initState, action) => { 
+export const UserReducer: Reducer<IUserTypes, UserActions> = (state = initState, action) => { 
     switch(action.type) {
-        case UserTypes.ADD_USER: {
+        case UserTypes.ADD_USER_DATA: {
             return {
                 ...state,
-                FirstName: action.payload.FirstName, 
-                LastName: action.payload.LastName
+                User: {
+                    FirstName: action.payload.FirstName,
+                    LastName: action.payload.LastName,
+                    Email: action.payload.Email
+                }
+            }
+        }
+        case UserTypes.LOGIN: {
+            return {
+                ...state,
+                LoginUser: {
+                    Login: action.payload.Login
+                }
             }
         }
         default: {

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 
-import { getUser } from 'store/actions/UserActions';
+import { SetUserData } from 'store/actions/UserActions';
 
 import Button from "components/Button/Button";
 import Input from 'components/Input/Input';
@@ -15,7 +15,7 @@ const SetUserComponent: React.FC<any> = (props: any) => {
     };
 
     const setUserNameAction = () => {
-        props.setUser(userName,"Admin");
+        props.setUser(userName,"Admin","admin@admin.pl");
     }
 
     return <div>
@@ -26,7 +26,7 @@ const SetUserComponent: React.FC<any> = (props: any) => {
 
 const mapDispatchToProps = (dispatch: any) => {
     return {
-        setUser: (FirstName: string, LastName: string) => {dispatch(getUser(FirstName,LastName))}
+        setUser: (FirstName: string, LastName: string, Email: string) => {dispatch(SetUserData(FirstName,LastName,Email))}
     }
 }
 
