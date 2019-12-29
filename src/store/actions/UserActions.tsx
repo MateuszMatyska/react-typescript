@@ -1,6 +1,6 @@
 import { ActionCreator, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
-import { ISetUserData, UserTypes, IUser } from "store/actions/UserTypes";
+import { ISetUserData, UserTypes, IUser, ILogIn, ILoginUser } from "store/actions/UserTypes";
 
 export const SetUserData: ActionCreator<ThunkAction<
     Promise<any>,
@@ -16,3 +16,32 @@ export const SetUserData: ActionCreator<ThunkAction<
         });
     };
 };
+
+export const LoginUser: ActionCreator< ThunkAction< 
+    Promise<any>, 
+    ILoginUser, 
+    null, 
+    ILogIn 
+>> = (login: string, password: string ) => {
+    return async (dispatch: Dispatch) => {
+        if(login === "user" && password === "qwe123") {
+            const loginData = {Login: login, UserType: "user"} as ILoginUser;
+            dispatch({
+                type: UserTypes.LOGIN,
+                payload: loginData
+            });
+            localStorage.setItem("token", `${login}`);
+        }
+
+        if(login === "admin" && password === "zaqwsx") {
+            const loginData = {Login: login, UserType: "admin"} as ILoginUser;
+            dispatch({
+                type: UserTypes.LOGIN,
+                payload: loginData
+            });
+            localStorage.setItem("token", `${login}`);
+        }
+    }
+}
+
+

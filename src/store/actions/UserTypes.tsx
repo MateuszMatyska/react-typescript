@@ -17,6 +17,7 @@ export interface IUser {
 
 export interface ILoginUser {
     Login: string;
+    UserType: string;
 }
 
 export interface ISetUserData {

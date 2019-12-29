@@ -23,7 +23,8 @@ export const UserReducer: Reducer<IUserTypes, UserActions> = (state = initState,
             return {
                 ...state,
                 LoginUser: {
-                    Login: action.payload.Login
+                    Login: action.payload.Login,
+                    UserType: action.payload.UserType
                 }
             }
         }
