@@ -24,3 +24,10 @@
     margin: 1rem;
 }
 
+.inputs-wrapper-error {
+    border: 0.1rem solid #FF1F35 !important;
+}
+
+.error-text {
+    color: #FF1F35;
+}

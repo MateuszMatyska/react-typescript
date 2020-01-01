@@ -36,7 +36,7 @@ const LoginPage: React.FC<any> = (props: any) => {
     const RenderWrongLogin = () => {
         if(isLoginClicked && !props.loginUser) {
             return <div className="input-section">
-                <h3>Error</h3>
+                <h3 className="error-text">Nieprawidowy login lub hasło</h3>
             </div>
         }
         else {
@@ -53,12 +53,12 @@ const LoginPage: React.FC<any> = (props: any) => {
             <div className="header">
                 <h1>Login</h1>
             </div>
-            <div className="inputs-wrapper">
+            <div className={isLoginClicked && !props.loginUser ? "inputs-wrapper inputs-wrapper-error" : "inputs-wrapper"}>
                 <div className="input-section">
-                    <Input type="text" value={login} onChange={onChangeLogin} placeholder="Login" />
+                    <Input type="text" value={login} onChange={onChangeLogin} placeholder="Login" validationFailed={isLoginClicked && !props.loginUser} />
                 </div>
                 <div className="input-section">
-                    <Input type="password" value={password} onChange={onChangePassword} placeholder="Password" />
+                    <Input type="password" value={password} onChange={onChangePassword} placeholder="Password" validationFailed={isLoginClicked && !props.loginUser} />
                 </div>
                 {RenderWrongLogin()}
                 <div className="input-section">
