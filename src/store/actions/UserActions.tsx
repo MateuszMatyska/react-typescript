@@ -44,4 +44,28 @@ export const LoginUser: ActionCreator< ThunkAction<
     }
 }
 
+export const GetLoginUser: ActionCreator< ThunkAction<
+    Promise<any>,
+    ILoginUser,
+    null,
+    ILogIn
+>> = (login: string) => {
+    return async (dispatch: Dispatch) => {
+        console.log(`akcja: ${login}`)
+        if(login === "user") {
+            const loginData = {Login: login, UserType: "user"} as ILoginUser;
+            dispatch({
+                type: UserTypes.LOGIN,
+                payload: loginData
+            });
+        }
 
+        if(login === "admin") {
+            const loginData = {Login: login, UserType: "admin"} as ILoginUser;
+            dispatch({
+                type: UserTypes.LOGIN,
+                payload: loginData
+            });
+        }
+    }    
+}

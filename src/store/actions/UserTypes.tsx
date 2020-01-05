@@ -30,5 +30,4 @@ export interface ILogIn {
     payload: ILoginUser
 }
 
-
 export type UserActions = ISetUserData | ILogIn;
