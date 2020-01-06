@@ -1,0 +1,16 @@
+.navbarMenu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 4rem;
+    border-bottom: 0.1rem solid #059FFF;
+}
+
+.menu-wrapper {
+    flex: 4;
+}
+
+.userPanel-wrapper {
+    flex: 0.5;
+    align-items: center;
+}
