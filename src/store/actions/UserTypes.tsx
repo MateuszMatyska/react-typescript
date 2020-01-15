@@ -3,7 +3,7 @@ export enum UserTypes {
     LOGIN = "LOGIN",
     LOGOUT = "LOGOUT"
 };
-
+//---Data Types---
 export interface IUserTypes {
     User?: IUser,
     LoginUser?: ILoginUser
@@ -19,7 +19,7 @@ export interface ILoginUser {
     Login: string;
     UserType: string;
 }
-
+//---Action Types---
 export interface ISetUserData {
     type: UserTypes.ADD_USER_DATA,
     payload: IUser
@@ -30,4 +30,8 @@ export interface ILogIn {
     payload: ILoginUser
 }
 
-export type UserActions = ISetUserData | ILogIn;
+export interface ILogOut {
+    type: UserTypes.LOGOUT
+}
+
+export type UserActions = ISetUserData | ILogIn | ILogOut;

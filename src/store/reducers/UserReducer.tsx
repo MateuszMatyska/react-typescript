@@ -28,6 +28,12 @@ export const UserReducer: Reducer<IUserTypes, UserActions> = (state = initState,
                 }
             }
         }
+        case UserTypes.LOGOUT: {
+            return {
+                User: undefined,
+                LoginUser: undefined
+            }
+        }
         default: {
             return state;
         }

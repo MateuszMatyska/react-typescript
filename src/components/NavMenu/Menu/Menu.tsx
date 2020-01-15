@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Menu: React.FC<any> = (props: any) => {
     const linkArray = [
         {name: 'Home', link: '/' },
-        {name: 'SubSite', link: '/sub'}
+        {name: 'Site', link: '/inprogress'}
     ];
 
     const renderLinks = () => {

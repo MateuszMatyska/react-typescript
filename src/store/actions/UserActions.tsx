@@ -1,6 +1,6 @@
 import { ActionCreator, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
-import { ISetUserData, UserTypes, IUser, ILogIn, ILoginUser } from "store/actions/UserTypes";
+import { ISetUserData, UserTypes, IUser, ILogIn, ILoginUser, ILogOut } from "store/actions/UserTypes";
 
 export const SetUserData: ActionCreator<ThunkAction<
     Promise<any>,
@@ -68,4 +68,19 @@ export const GetLoginUser: ActionCreator< ThunkAction<
             });
         }
     }    
+}
+
+export const LogOutUser: ActionCreator< ThunkAction<
+    Promise<any>,
+    ILoginUser,
+    null,
+    ILogOut
+>> = () => {
+   return async (dispatch: Dispatch) => {
+    dispatch({
+        type: UserTypes.LOGOUT,
+    });
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+   } 
 }
