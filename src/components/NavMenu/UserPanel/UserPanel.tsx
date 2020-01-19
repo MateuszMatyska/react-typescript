@@ -22,7 +22,7 @@ const UserPanel: React.FC<any> = (props: any) => {
         <div className="dd-button">{props.user.Login}</div>
           <input type="checkbox" className="dd-input" id="test" />
           <ul className="dd-menu">
-            <li onClick={() => {redirectTo("/inprogress")}}>User Settings</li>
+            <li onClick={() => {redirectTo("/usersettings")}}>User Settings</li>
             <li className="divider"></li>
             <li onClick={() => {logout()}}>
               Logout

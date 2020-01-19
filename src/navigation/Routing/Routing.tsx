@@ -1,11 +1,12 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import HomePage from 'pages/HomePage/HomePage';
-import LoginPage from 'pages/LoginPage/LoginPage';
+import LoginPage from 'pages/LoginPagePage/LoginPage';
 import InProgress from 'pages/InProgressPage/InProgessPage';
 import PrivateRoute from 'navigation/PrivateRoutes/PrivateRoute';
 import NavMenu from 'components/NavMenu/NavMenu';
-import NotFound from 'pages/NotFound/NotFound';
+import NotFound from 'pages/NotFoundPage/NotFound';
+import UserSettings from 'pages/UserSettingsPage/UserSettings';
 
 const Routing : React.FC = () => {
     return <Router>
@@ -14,6 +15,7 @@ const Routing : React.FC = () => {
       <PrivateRoute exact path="/" component={HomePage} />
       <PrivateRoute exact path="/login" component={LoginPage} redirectPath="/"/> 
       <PrivateRoute exact path="/inprogress" component={InProgress} />
+      <PrivateRoute exact path="/usersettings" component={UserSettings} />
       <Route path="*"><NotFound /></Route>
     </Switch>
   </Router>
