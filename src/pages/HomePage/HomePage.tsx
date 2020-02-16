@@ -3,6 +3,7 @@ import UserComponent from 'components/UserComponent';
 import SetUserComponent from 'components/SetUserComponent';
 import {connect} from 'react-redux';
 import {IAppState} from 'store/Store';
+import WeatherComponent from 'components/WeatherComponent';
 
 const HomePage: React.FC<any> = (props: any) =>{    
     return <div>
@@ -11,6 +12,7 @@ const HomePage: React.FC<any> = (props: any) =>{
             <UserComponent />
             <h1>----------</h1>
             <SetUserComponent />
+            <WeatherComponent />
         </div>
     </div>
 }
