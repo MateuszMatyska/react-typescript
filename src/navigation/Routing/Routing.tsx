@@ -7,6 +7,7 @@ import PrivateRoute from 'navigation/PrivateRoutes/PrivateRoute';
 import NavMenu from 'components/NavMenu/NavMenu';
 import NotFound from 'pages/NotFoundPage/NotFound';
 import UserSettings from 'pages/UserSettingsPage/UserSettings';
+import WeatherPage from 'pages/WeatherPage/WeatherPage';
 
 const Routing : React.FC = () => {
     return <Router>
@@ -16,6 +17,7 @@ const Routing : React.FC = () => {
       <PrivateRoute exact path="/login" component={LoginPage} redirectPath="/"/> 
       <PrivateRoute exact path="/inprogress" component={InProgress} />
       <PrivateRoute exact path="/usersettings" component={UserSettings} />
+      <PrivateRoute exact path="/weather" component={WeatherPage} />
       <Route path="*"><NotFound /></Route>
     </Switch>
   </Router>
