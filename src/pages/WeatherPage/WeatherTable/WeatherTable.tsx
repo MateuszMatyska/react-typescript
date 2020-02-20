@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import {IAppState} from 'store/Store';
-import {GetWeather} from 'store/WeatherStations/weatherStations.action';
+import {GetWeather, DeleteWeather} from 'store/WeatherStations/weatherStations.action';
 import { IWeatherType } from 'types/IWeatherType';
 import TableRow from 'pages/WeatherPage/WeatherTable/components/TableRow';
 import './style.css';
@@ -10,16 +10,20 @@ const WeatherTable: React.FC<any> = (props: any) => {
 
     useEffect(() => {
         props.GetWeatherAction();
-    }, [props])
+    }, []);
 
     const mapWeather = () => {
         if(props.weatherData) {
             return props.weatherData.map((item: IWeatherType) => {
-                return <TableRow item={item} />
+                return <TableRow item={item} deleteAction={deleteItem} />
             }) 
         }
     }  
 
+  const deleteItem = (id: number) => {
+    props.DeleteWeatherAction(id);
+  } 
+    
   return (
     <table className="weatherTable__table" >
       <thead>
@@ -49,6 +53,7 @@ const mapStateToPros = (store: IAppState) => {
 const mapDispatchToProps = (dispatch: any) => {
     return {
         GetWeatherAction: () => dispatch(GetWeather()),
+        DeleteWeatherAction: (id: number) => dispatch(DeleteWeather(id))
     }
 }
 

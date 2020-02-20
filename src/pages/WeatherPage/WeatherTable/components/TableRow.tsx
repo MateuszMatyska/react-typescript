@@ -1,4 +1,5 @@
 import React from "react";
+import Button from 'components/Button/Button';
 
 const TableRow: React.FC<any> = (props: any) => {
     return <tr>
@@ -8,7 +9,7 @@ const TableRow: React.FC<any> = (props: any) => {
         <td>{props.item.measureHour}</td>
         <td>{props.item.temperature}</td>
         <td>{props.item.windSpeed}</td>
-        <td></td>
+        <td><Button variant="primary" text="Edit" /> <Button variant="danger" text="Delete" onClick={() => {props.deleteAction(props.item.id)}}/></td>
     </tr>
 };
 
