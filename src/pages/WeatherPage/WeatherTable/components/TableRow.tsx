@@ -9,7 +9,10 @@ const TableRow: React.FC<any> = (props: any) => {
         <td>{props.item.measureHour}</td>
         <td>{props.item.temperature}</td>
         <td>{props.item.windSpeed}</td>
-        <td><Button variant="primary" text="Edit" /> <Button variant="danger" text="Delete" onClick={() => {props.deleteAction(props.item.id)}}/></td>
+        <td>
+            <Button variant="primary" text="Edit" onClick={() => {props.editAction(props.item)}} /> 
+            <Button variant="danger" text="Delete" onClick={() => {props.deleteAction(props.item.id)}}/>
+        </td>
     </tr>
 };
 
