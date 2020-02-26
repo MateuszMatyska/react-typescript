@@ -1,12 +1,13 @@
 import { ActionCreator, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { IWeatherType } from 'types/IWeatherType';
-import { IGetWeather, IDeleteWeather } from './weatherStations.reducer';
+import { IGetWeather, IDeleteWeather, IEditWeather } from './weatherStations.reducer';
 import { getData } from './weatherStations.api';
 
 export enum WeatherActionTypes {
     GET_WEATHER = "GET_WEATHER",
     DELETE_WEATHER = "DELETE_WEATHER",
+    EDIT_WEATHER = "EDIT_WEATHER"
 }
 
 export const GetWeather: ActionCreator<ThunkAction<
@@ -34,6 +35,20 @@ export const DeleteWeather: ActionCreator<ThunkAction<
         dispatch({
             type: WeatherActionTypes.DELETE_WEATHER,
             payload: id
+        });
+    };
+};
+
+export const EditWeather: ActionCreator<ThunkAction<
+    Promise<any>,
+    IWeatherType,
+    null,
+    IEditWeather
+>> = (item: IWeatherType) => {
+    return async (dispatch: Dispatch) => {
+        dispatch({
+            type: WeatherActionTypes.EDIT_WEATHER,
+            payload: item
         });
     };
 };

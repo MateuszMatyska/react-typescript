@@ -22,7 +22,7 @@
   background-color: #fff;
   margin: 10rem auto;
   border: 0.1rem solid #888;
-  width: 50rem; 
+  width: 40rem; 
 }
 
 .modal__header {
@@ -33,6 +33,13 @@
 .modal__body {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.modal__body > input {
+    margin-top: 1rem;
+    margin-bottom: 0.1rem;
 }
 
 .modal__footer {

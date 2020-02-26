@@ -12,7 +12,12 @@ export interface IDeleteWeather {
     payload: number
 }
 
-type WeatherActions = IGetWeather | IDeleteWeather;
+export interface IEditWeather {
+    type: WeatherActionTypes.EDIT_WEATHER,
+    payload: IWeatherType
+}
+
+type WeatherActions = IGetWeather | IDeleteWeather | IEditWeather;
 
 export interface IInitialState {
     weatherData: IWeatherType [],
@@ -37,6 +42,23 @@ export const WeatherReducer: Reducer<IInitialState, WeatherActions> = (state = i
         case WeatherActionTypes.DELETE_WEATHER: {
             const id = action.payload;
             let localWeather: IWeatherType[] = state.weatherData.filter((item,key) => item.id !== id);
+
+            return {
+                ...state,
+                weatherData: localWeather
+            }
+        }
+        case WeatherActionTypes.EDIT_WEATHER: {
+            const item = action.payload;
+            
+            let localWeather: IWeatherType[] = state.weatherData;
+            const idx = localWeather.findIndex((i) => i.id === item.id);
+            
+            localWeather[idx].station = item.station;
+            localWeather[idx].measureDate = item.measureDate;
+            localWeather[idx].measureHour = item.measureHour;
+            localWeather[idx].temperature = item.temperature;
+            localWeather[idx].windSpeed = item.windSpeed;
 
             return {
                 ...state,

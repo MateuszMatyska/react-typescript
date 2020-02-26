@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import { connect } from 'react-redux';
 import {IAppState} from 'store/Store';
-import {GetWeather, DeleteWeather} from 'store/WeatherStations/weatherStations.action';
+import {GetWeather, DeleteWeather, EditWeather} from 'store/WeatherStations/weatherStations.action';
 import { IWeatherType } from 'types/IWeatherType';
 import TableRow from 'pages/WeatherPage/WeatherTable/components/TableRow';
 import Modal from 'components/Modal/Modal';
 import './style.css';
-import Button from 'components/Button/Button';
+import Input from 'components/Input/Input';
 
 const WeatherTable: React.FC<any> = (props: any) => {
     const [visible, setVisible] = useState(false);
@@ -38,7 +38,15 @@ const WeatherTable: React.FC<any> = (props: any) => {
   }
 
   const editWeather = () => {
+    props.editWeatherAction(weather);
     setVisible(false);
+  }
+
+  const changeWeatherValue = (name: string, event: any) => {
+    setWeather({
+      ...weather,
+      [name]: event.target.value
+    } as IWeatherType);
   }
     
   return (
@@ -60,8 +68,11 @@ const WeatherTable: React.FC<any> = (props: any) => {
       </tbody>
     </table>
     <Modal title="Edit Weather" visible={visible} onSubmit={() => {editWeather()}} onClose={() => { cancelModal()}}>
-      <p>Modal body</p>
-      <p>{weather.id}</p>
+      <Input placeholder="Station" type="text" value={weather.station} onChange={(e: any) => changeWeatherValue('station',e)} />
+      <Input placeholder="Measure Date" type="text" value={weather.measureDate} onChange={(e: any) => changeWeatherValue('measureDate',e)} />
+      <Input placeholder="Measure Hour" type="text" value={weather.measureHour} onChange={(e: any) => changeWeatherValue('measureHour',e)} />
+      <Input placeholder="Temperature" type="text" value={weather.temperature} onChange={(e: any) => changeWeatherValue('temperature',e)} />
+      <Input placeholder="Wind Speed" type="text" value={weather.windSpeed} onChange={(e: any) => changeWeatherValue('windSpeed',e)} />
     </Modal>
     </>
   );
@@ -76,7 +87,8 @@ const mapStateToPros = (store: IAppState) => {
 const mapDispatchToProps = (dispatch: any) => {
     return {
         GetWeatherAction: () => dispatch(GetWeather()),
-        DeleteWeatherAction: (id: number) => dispatch(DeleteWeather(id))
+        DeleteWeatherAction: (id: number) => dispatch(DeleteWeather(id)),
+        editWeatherAction: (item: IWeatherType) => dispatch(EditWeather(item))
     }
 }
 
