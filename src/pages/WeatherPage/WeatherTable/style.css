@@ -1,0 +1,25 @@
+.weatherTable__table {
+    border: solid #059FFF 0.5rem;
+    border-collapse: collapse;
+}
+
+.weatherTable__table--head {
+    width: 1rem;
+    border: solid #059FFF 0.5rem;
+}
+
+.weatherTable__table--head > th {
+    border-bottom: solid #059FFF 0.5rem;
+    border-right: solid #059FFF 0.5rem;
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.weatherTable__table--body > tr > td {
+    border-bottom: solid #059FFF 0.5rem;
+    border-right: solid #059FFF 0.5rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}

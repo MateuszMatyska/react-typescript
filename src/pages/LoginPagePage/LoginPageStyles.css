@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    margin: 2rem;
+}
+
+.inputs-wrapper {
+    margin: 1.5rem;
+    border: 0.1rem solid #0277B3;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.input-section {
+    margin: 1rem;
+}
+
+.inputs-wrapper-error {
+    border: 0.1rem solid #FF1F35 !important;
+}
+
+.error-text {
+    color: #FF1F35;
+}
